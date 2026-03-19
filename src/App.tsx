@@ -22,8 +22,8 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/velflow-admin-2026" element={<AdminDashboard />} />
-            <Route path="*" element={<NotFound />} />
             <Route path="/submit-review" element={<SubmitReview />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
