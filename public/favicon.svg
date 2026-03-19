@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="7" fill="#07070A"/>
+  <circle cx="16" cy="16" r="13" fill="none" stroke="#F5A623" stroke-width="0.5" opacity="0.3"/>
+  <!-- V left arm -->
+  <line x1="9" y1="8" x2="16" y2="22" stroke="#F5A623" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- V right arm -->
+  <line x1="23" y1="8" x2="16" y2="22" stroke="#F5A623" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- Top left node -->
+  <rect x="6" y="5.5" width="6" height="6" rx="1.5" fill="#07070A" stroke="#F5A623" stroke-width="1.2"/>
+  <circle cx="9" cy="8.5" r="1.2" fill="#F5A623"/>
+  <!-- Top right node -->
+  <rect x="20" y="5.5" width="6" height="6" rx="1.5" fill="#07070A" stroke="#F5A623" stroke-width="1.2"/>
+  <circle cx="23" cy="8.5" r="1.2" fill="#F5A623"/>
+  <!-- Bottom tip node -->
+  <circle cx="16" cy="22" r="3" fill="#07070A" stroke="#F5A623" stroke-width="1.5"/>
+  <circle cx="16" cy="22" r="1.2" fill="#F5A623"/>
+  <!-- Flow dot -->
+  <circle cx="16" cy="27" r="1.2" fill="#F5A623" opacity="0.5"/>
+</svg>

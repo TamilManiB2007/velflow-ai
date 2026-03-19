@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 17% 2%;
+    --foreground: 40 25% 93%;
+
+    --card: 240 15% 5%;
+    --card-foreground: 40 25% 93%;
+
+    --popover: 240 15% 5%;
+    --popover-foreground: 40 25% 93%;
+
+    --primary: 37 91% 55%;
+    --primary-foreground: 240 17% 2%;
+
+    --secondary: 240 10% 12%;
+    --secondary-foreground: 40 25% 93%;
+
+    --muted: 240 10% 10%;
+    --muted-foreground: 40 10% 55%;
+
+    --accent: 37 91% 55%;
+    --accent-foreground: 240 17% 2%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 40 25% 93%;
+
+    --border: 240 10% 15%;
+    --input: 240 10% 15%;
+    --ring: 37 91% 55%;
+
+    --radius: 0.5rem;
+
+    --gold: 37 91% 55%;
+    --gold-dim: 37 70% 35%;
+    --gold-glow: 37 100% 65%;
+    --cream: 40 25% 93%;
+    --deep-black: 240 17% 2%;
+    --glass-bg: 240 15% 5%;
+    --glass-border: 37 91% 55%;
+
+    --sidebar-background: 240 15% 5%;
+    --sidebar-foreground: 40 25% 93%;
+    --sidebar-primary: 37 91% 55%;
+    --sidebar-primary-foreground: 240 17% 2%;
+    --sidebar-accent: 240 10% 12%;
+    --sidebar-accent-foreground: 40 25% 93%;
+    --sidebar-border: 240 10% 15%;
+    --sidebar-ring: 37 91% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Outfit', sans-serif;
+    cursor: none;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Rajdhani', sans-serif;
+  }
+
+  code, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      cursor: auto;
+    }
+  }
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: hsla(240, 15%, 5%, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid hsla(37, 91%, 55%, 0.12);
+}
+
+.glass-strong {
+  background: hsla(240, 15%, 5%, 0.8);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid hsla(37, 91%, 55%, 0.2);
+}
+
+/* Gold glow text */
+.text-glow {
+  text-shadow: 0 0 20px hsla(37, 91%, 55%, 0.5), 0 0 40px hsla(37, 91%, 55%, 0.3);
+}
+
+.text-glow-strong {
+  text-shadow: 0 0 30px hsla(37, 91%, 55%, 0.7), 0 0 60px hsla(37, 91%, 55%, 0.4), 0 0 100px hsla(37, 91%, 55%, 0.2);
+}
+
+/* Gold shimmer effect */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--gold)) 0%,
+    hsl(var(--gold-glow)) 50%,
+    hsl(var(--gold)) 100%
+  );
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Clip path angular button */
+.clip-angular {
+  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+/* Glow pulse */
+@keyframes glow-pulse {
+  0%, 100% { 
+    text-shadow: 0 0 20px hsla(37, 91%, 55%, 0.5), 0 0 40px hsla(37, 91%, 55%, 0.3);
+    filter: brightness(1);
+  }
+  50% { 
+    text-shadow: 0 0 40px hsla(37, 91%, 55%, 0.8), 0 0 80px hsla(37, 91%, 55%, 0.5), 0 0 120px hsla(37, 91%, 55%, 0.3);
+    filter: brightness(1.2);
+  }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Gradient mesh background for mobile */
+@keyframes gradient-mesh {
+  0%, 100% { 
+    background-position: 0% 50%;
+  }
+  50% { 
+    background-position: 100% 50%;
+  }
+}
+
+.gradient-mesh-bg {
+  background: 
+    radial-gradient(ellipse at 20% 50%, hsla(37, 91%, 55%, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, hsla(37, 70%, 35%, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 40% 80%, hsla(37, 100%, 65%, 0.04) 0%, transparent 50%),
+    hsl(var(--background));
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsla(37, 91%, 55%, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsla(37, 91%, 55%, 0.5);
+}
+
+/* Card diagonal clip */
+.clip-diagonal {
+  clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 0 100%);
+}
+
+/* Gold line animation */
+@keyframes draw-line {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Ripple effect */
+@keyframes ripple {
+  0% { transform: scale(0); opacity: 0.6; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+.ripple::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: hsla(37, 91%, 55%, 0.3);
+  border-radius: 50%;
+  animation: ripple 0.6s ease-out;
+}
+
+/* Tamil text glow */
+@keyframes tamil-glow {
+  0%, 100% {
+    text-shadow: 0 0 40px hsla(37, 91%, 55%, 0.6), 0 0 80px hsla(37, 91%, 55%, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 80px hsla(37, 91%, 55%, 0.9), 0 0 120px hsla(37, 91%, 55%, 0.5), 0 0 200px hsla(37, 91%, 55%, 0.3);
+  }
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Typewriter cursor */
+@keyframes blink-cursor {
+  0%, 100% { border-color: hsl(var(--gold)); }
+  50% { border-color: transparent; }
+}
+
+/* Selection color */
+::selection {
+  background: hsla(37, 91%, 55%, 0.3);
+  color: hsl(var(--foreground));
+}
